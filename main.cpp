@@ -43,17 +43,8 @@ return Cz;
 using namespace std;
 int main()
 {       float x[10]; char ch;int gcde=0;
-        bool got_values=false;
-        bool got_F=false;
-        bool got_only_z=false;
-        bool check_quality=false;
-    	char ch_x;char ch_y;char ch_z; char ch_f;char g28;
-        float x_value=0.0;float y_value=0.0;float z_value=0.0; float f_value=0.0; 
-        float x_mid=0.0;float y_mid=0.0;
-        float x_value_new=0.0;float y_value_new=0.0;float z_value_new=0.0;  
-        float movement=0.0;   
-        float angl1;float angl2;
-	char buffer[80];  
+        
+    	char buffer[80];  
         char data[80];char files[80];string str1="square.txt";
         string str[10];//name of the files will be stored
         string strNew[10];
@@ -92,15 +83,32 @@ int main()
          for(int i=1;i<=NUMofFiles;i++)
          cout<<str[i]<<"\t";
          cout<<"\nNumber of Gcode files to be processed :"<<NUMofFiles<<endl;
-        ifstream infile3(str[1].c_str()); //reads the file str1 for G-Code
+        
+
+
+
+
+for(int k=1;k<=NUMofFiles;k++) /////////starting of for loop
+       {  
+        bool got_values=false;
+        bool got_F=false;
+        bool got_only_z=false;
+        bool check_quality=false;
+	char ch_x;char ch_y;char ch_z; char ch_f;char g28;
+        float x_value=0.0;float y_value=0.0;float z_value=0.0; float f_value=0.0; 
+        float x_mid=0.0;float y_mid=0.0;
+        float x_value_new=0.0;float y_value_new=0.0;float z_value_new=0.0; 
+	char ch;int gcde=0;
+       
+	ifstream infile3(str[k].c_str()); //reads the file str1 for G-Code
         if (! infile3)
-	{ cout<<"\n The target file"<<str[1]<<" do not exist"<<endl;
+	{ cout<<"\n The target files do not exist"<<endl;
 	exit(1);
 	}
-        str[1].insert(0, mod);
-        str[1].erase(str[1].size()-3,3);
-        str[1]=str[1]+"g";
-       	ofstream outfile(str[1].c_str()); //writing G-code to a new file
+        str[k].insert(0, mod);
+        str[k].erase(str[k].size()-3,3);
+        str[k]=str[k]+"g";
+     	ofstream outfile(str[k].c_str()); //writing G-code to a new file
         while(!infile3.eof())
         {infile3>>ch;
          exit2: if(infile3.eof()!=false) break;
@@ -144,6 +152,7 @@ int main()
              //if(got_only_z==true)outfile<<"G0"<<" "<<"Z"<<z_value<<endl;
           }//end of reading G-value
          }//end of while
+} //end of for loop
 
 
        
