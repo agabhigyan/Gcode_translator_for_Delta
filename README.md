@@ -9,7 +9,7 @@ arm_length_in_mm ___\
 height _____\
 radius_of_platform  _____\
 radius_of_base_plate ____\
-offset  ____\
+offset  ____
 
 
 Measure above quantities from your machine and update the file.
