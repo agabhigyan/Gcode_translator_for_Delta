@@ -1,5 +1,5 @@
 arm_length_in_mm 230
 height        350
-radius_platform  38
-radius_base_plate  127
+radius_of_platform  38
+radius_of_base_plate  127
 offset 3
