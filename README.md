@@ -5,11 +5,11 @@ ore translating the G-Codes the file format needs to be changed from ".g" or ".g
 The file "settings.txt" contains the following parameters of the Delta robot
 
 
-arm_length_in_mm 230
-height _____
-radius_of_platform  _____
-radius_of_base_plate ____
-offset  ____
+arm_length_in_mm ___\
+height _____\
+radius_of_platform  _____\
+radius_of_base_plate ____\
+offset  ____\
 
 
 Measure above quantities from your machine and update the file.
